@@ -1,0 +1,109 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  VayuShield - AWS Serverless Architecture
+  Hyperlocal Air Quality Ingestion, Stubble Fire Aggregator,
+  and AWS Cedar Policy GRAP Enforcement Pipeline.
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 256
+    Runtime: python3.11
+    Environment:
+      Variables:
+        TABLE_NAME: !Ref VayuStationDataTable
+        ALERTS_TOPIC_ARN: !Ref VayuAlertsTopic
+        POWERTOOLS_SERVICE_NAME: VayuShield
+
+Resources:
+  # ============================================================================
+  # 1. DynamoDB Table for Station Air Quality & Hotspots
+  # ============================================================================
+  VayuStationDataTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: VayuStationData
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: stationId
+          AttributeType: S
+        - AttributeName: timestamp
+          AttributeType: N
+      KeySchema:
+        - AttributeName: stationId
+          KeyType: HASH
+        - AttributeName: timestamp
+          KeyType: RANGE
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+
+  # ============================================================================
+  # 2. SNS Topic for Real-time School & GRAP Alerts (SMS / Email)
+  # ============================================================================
+  VayuAlertsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: VayuShield-Emergency-Alerts
+      DisplayName: VayuShield AQI & GRAP Action Alerts
+
+  # ============================================================================
+  # 3. Scheduled Ingestion Lambda: Fetches CPCB & NASA Satellite Fire Data
+  # ============================================================================
+  AqiIngestionFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./lambda/ingest
+      Handler: app.lambda_handler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref VayuStationDataTable
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt VayuAlertsTopic.TopicName
+      Events:
+        ScheduledIngest:
+          Type: Schedule
+          Properties:
+            Schedule: rate(15 minutes)
+            Name: VayuFifteenMinuteIngestionTrigger
+            Description: Ingests Delhi-NCR station data & farm fires every 15 mins
+
+  # ============================================================================
+  # 4. API Gateway & Policy Evaluation Lambda (Running AWS Cedar)
+  # ============================================================================
+  VayuApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./lambda/api
+      Handler: app.lambda_handler
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref VayuStationDataTable
+      Events:
+        GetStations:
+          Type: Api
+          Properties:
+            Path: /api/stations
+            Method: get
+        EvaluatePolicy:
+          Type: Api
+          Properties:
+            Path: /api/evaluate-grap
+            Method: post
+        GetStubbleFires:
+          Type: Api
+          Properties:
+            Path: /api/stubble-hotspots
+            Method: get
+
+Outputs:
+  VayuApiEndpoint:
+    Description: "API Gateway endpoint URL for Prod environment"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+  VayuStationDataTableArn:
+    Description: "DynamoDB Table ARN"
+    Value: !GetAtt VayuStationDataTable.Arn
+  VayuAlertsTopicArn:
+    Description: "SNS Alerts Topic ARN"
+    Value: !Ref VayuAlertsTopic
