@@ -1,11 +1,6 @@
 # 🛡️ VayuShield (वायु-शील्ड)
 ### *Hyperlocal Air Intelligence, AWS Cedar GRAP Policy Engine & Vulnerable Group Protection*
 
-> 🏆 **Submission for Environmental Hacks (DTU Delhi)**  
-> 🏷️ **Team Name:** **VayuKraft**  
-> 🎯 **Track:** **Track 01: Air** (AQI • School Safety on Bad Days • Stubble Burning • Indoor Air • Pollution Exposure)  
-> ☁️ **AWS Qualification:** **AWS Cedar (Open Source)** + **AWS SAM / Serverless Architecture (Ship It)**
-
 ---
 
 ## 🌟 The Problem
@@ -23,7 +18,7 @@ Key systemic failures include:
 
 **VayuShield** is an end-to-end environmental intelligence platform and policy decision point built specifically for Delhi-NCR's airshed:
 
-| Track 01 Requirement | VayuShield Implementation |
+| Capability | VayuShield Implementation |
 | :--- | :--- |
 | **School Safety on Bad Days** | **AWS Cedar Policy Engine:** Formulates CAQM GRAP Regulations (Stages I–IV) and Delhi Directorate of Education guidelines into formal Policy-as-Code (`aws/cedar_policies.cedar`). Automatically forbids outdoor sports & shifts primary classes to hybrid online when AQI breaches thresholds. Generates printable official school advisories. |
 | **Stubble Burning** | **Satellite Plume Telemetry:** Aggregates NASA VIIRS & MODIS thermal anomaly fire counts across Punjab and Haryana. Uses upper-tropospheric wind speed & vectors to compute flight-time ETAs of smoke plumes entering Delhi. |
@@ -33,8 +28,6 @@ Key systemic failures include:
 ---
 
 ## ☁️ AWS Technology Stack & Compliance
-
-VayuShield is built to satisfy **both** paths of the hackathon criteria:
 
 ### 1. Build It: AWS Open Source
 * **AWS Cedar Policy Language & Engine** (`@cedar-policy/cedar-wasm` & `aws/cedar_policies.cedar`):
@@ -69,7 +62,7 @@ VayuShield is built to satisfy **both** paths of the hackathon criteria:
 ### Installation
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-username/vayushield.git
+git clone https://github.com/kiranpal19/vayushield.git
 cd vayushield
 
 # 2. Install dependencies (including @cedar-policy/cedar-wasm)
@@ -113,9 +106,3 @@ environment-hacks/
 │   └── main.tsx
 └── package.json
 ```
-
----
-
-## 👥 Team VayuKraft
-* Built for **Environmental Hacks @ DTU Delhi**
-* Dedicated to making Delhi breathe easier through deterministic policy and open-source AWS cloud technology.
