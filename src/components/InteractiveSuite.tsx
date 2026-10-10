@@ -43,32 +43,16 @@ export const InteractiveSuite: React.FC<InteractiveSuiteProps> = ({
             </p>
           </div>
 
-          {/* Sleek Tool Selector Tabs */}
-          <div className="flex items-center bg-gray-100 p-1.5 rounded-2xl border border-gray-200/80 overflow-x-auto no-scrollbar">
-            {[
-              { id: 'map', label: 'Delhi Map', icon: Wind },
-              { id: 'school', label: 'School & Cedar', icon: School },
-              { id: 'stubble', label: 'Stubble Radar', icon: Flame },
-              { id: 'commute', label: 'Commute Dosage', icon: Compass },
-              { id: 'indoor', label: 'Purifier Lab', icon: Home },
-            ].map((tab) => {
-              const Icon = tab.icon;
-              const isCurrent = currentTool === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
-                    isCurrent
-                      ? 'bg-white text-gray-950 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
+          {/* Active Tool Status Indicator */}
+          <div className="flex items-center space-x-2.5 bg-gray-100/90 border border-gray-200/80 px-4 py-2 rounded-full text-xs font-semibold text-gray-800 self-start md:self-auto shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>
+              {currentTool === 'map' && '📍 Delhi-NCR Monitoring Grid'}
+              {currentTool === 'school' && '🏫 AWS Cedar Policy Decision Point'}
+              {currentTool === 'stubble' && '🌾 Satellite Stubble Plume Tracker'}
+              {currentTool === 'commute' && '🚶 Commute Bio-Dosimeter'}
+              {currentTool === 'indoor' && '🏠 CADR Air Purifier Lab'}
+            </span>
           </div>
         </div>
 

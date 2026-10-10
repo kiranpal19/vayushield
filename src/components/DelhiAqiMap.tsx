@@ -45,7 +45,7 @@ export const DelhiAqiMap: React.FC<DelhiAqiMapProps> = ({
               </span>
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">
-              Featuring DTU Rohini node, major transport hubs, and industrial clusters.
+              Covering major transport corridors, residential zones, and industrial clusters.
             </p>
           </div>
 
@@ -86,13 +86,13 @@ export const DelhiAqiMap: React.FC<DelhiAqiMapProps> = ({
             {stations.map((st) => {
               const color = getAqiColor(st.aqi);
               const isSelected = selectedStation.id === st.id;
-              const isDtu = st.id === 'dtu-bawana';
+              const isNorthNode = st.id === 'rohini-bawana';
 
               return (
                 <CircleMarker
                   key={st.id}
                   center={[st.lat, st.lng]}
-                  radius={isSelected ? 16 : isDtu ? 14 : 10}
+                  radius={isSelected ? 16 : isNorthNode ? 14 : 10}
                   pathOptions={{
                     color: isSelected ? '#ffffff' : color,
                     fillColor: color,
@@ -107,11 +107,6 @@ export const DelhiAqiMap: React.FC<DelhiAqiMapProps> = ({
                     <div className="p-2 space-y-1.5 text-slate-100">
                       <div className="font-bold text-sm flex items-center justify-between">
                         <span>{st.name}</span>
-                        {isDtu && (
-                          <span className="text-[10px] bg-cyan-600 text-white px-1.5 py-0.5 rounded font-mono">
-                            DTU Campus
-                          </span>
-                        )}
                       </div>
                       <div className="flex items-center space-x-2">
                         <span className="text-xl font-extrabold" style={{ color }}>
@@ -155,11 +150,6 @@ export const DelhiAqiMap: React.FC<DelhiAqiMapProps> = ({
               </span>
               <h3 className="text-xl font-bold text-white flex items-center space-x-2 mt-0.5">
                 <span>{selectedStation.name}</span>
-                {selectedStation.id === 'dtu-bawana' && (
-                  <span className="text-xs bg-indigo-900/80 text-indigo-300 border border-indigo-700 px-2 py-0.5 rounded-full font-mono">
-                    Hackathon Host
-                  </span>
-                )}
               </h3>
             </div>
             <div className={`px-2.5 py-1 rounded-lg border text-xs font-semibold ${getAqiBadgeClass(selectedStation.aqi)}`}>

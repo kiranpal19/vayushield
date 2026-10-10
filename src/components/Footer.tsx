@@ -24,11 +24,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAwsModal, onNavigate }) =>
             <p className="text-gray-500 max-w-sm leading-relaxed text-xs">
               Together, we can create a breathable, resilient, and safe environment for Delhi-NCR through open-source cloud telemetry and deterministic health policies.
             </p>
-            <div className="pt-2 flex items-center space-x-3 text-gray-400">
-              <span className="text-[11px] font-bold text-gray-800 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
-                Team VayuKraft
-              </span>
-              <span className="text-[11px] text-gray-400">Environmental Hacks @ DTU Delhi</span>
+            <div className="pt-2 flex items-center space-x-2 text-gray-400 text-[11px]">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>Realtime Telemetry Network • Open Source</span>
             </div>
           </div>
 
@@ -91,13 +89,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAwsModal, onNavigate }) =>
             </ul>
           </div>
 
-          {/* Col 3: Hackathon */}
+          {/* Col 3: Standards & Docs */}
           <div className="space-y-3">
-            <h5 className="font-bold text-gray-900 uppercase tracking-wider text-[11px]">Hackathon Info</h5>
+            <h5 className="font-bold text-gray-900 uppercase tracking-wider text-[11px]">Standards & Data</h5>
             <ul className="space-y-2">
-              <li><span className="text-gray-600">Track 01: Air Quality</span></li>
-              <li><span className="text-gray-600">DTU, Delhi (Oct 10)</span></li>
-              <li><span className="text-gray-600">Amazon Team Workshops</span></li>
+              <li><span className="text-gray-600">CPCB Telemetry Grid</span></li>
+              <li><span className="text-gray-600">CAQM GRAP Directives</span></li>
+              <li><span className="text-gray-600">WHO Air Quality Guidelines</span></li>
               <li><span className="text-gray-600">License: Apache-2.0</span></li>
             </ul>
           </div>
@@ -105,7 +103,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAwsModal, onNavigate }) =>
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-400 text-[11px]">
-          <p>© 2026 VayuShield (Team VayuKraft). Built for Environmental Hacks at Delhi Technological University.</p>
+          <p>© 2026 VayuShield. Hyperlocal Air Quality Intelligence & Protective Policy Platform.</p>
           <div className="flex items-center space-x-4">
             <span className="hover:text-gray-600 cursor-pointer">Privacy Policy</span>
             <span className="hover:text-gray-600 cursor-pointer">Terms of Directive</span>

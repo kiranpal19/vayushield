@@ -41,19 +41,19 @@ export const Navbar: React.FC<NavbarProps> = ({
                   VayuShield
                 </span>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200 uppercase tracking-wider">
-                  DTU Delhi
+                  Air Intelligence
                 </span>
               </div>
-              <p className="text-[11px] text-gray-500 font-medium">AWS Environmental Intelligence</p>
+              <p className="text-[11px] text-gray-500 font-medium">Realtime Environmental Protection</p>
             </div>
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center bg-gray-100/80 p-1 rounded-full border border-gray-200/70 space-x-0.5">
             {[
               { id: 'hero', label: 'Home' },
-              { id: 'map', label: 'Live Air Grid' },
-              { id: 'school', label: 'School Safety & Cedar' },
+              { id: 'map', label: 'Air Grid' },
+              { id: 'school', label: 'School Safety' },
               { id: 'stubble', label: 'Stubble Radar' },
               { id: 'commute', label: 'Commute Dosimeter' },
               { id: 'indoor', label: 'Purifier Lab' },
@@ -66,10 +66,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                     setActiveTab(link.id);
                     onScrollToTool(link.id);
                   }}
-                  className={`px-3.5 py-2 rounded-full text-xs font-semibold transition-all ${
+                  className={`px-4 py-1.5 rounded-full text-xs transition-all ${
                     isActive
-                      ? 'bg-gray-900 text-white shadow-sm'
-                      : 'text-gray-600 hover:text-gray-950 hover:bg-gray-100/80'
+                      ? 'bg-white text-gray-950 font-bold shadow-sm'
+                      : 'text-gray-600 font-medium hover:text-gray-950 hover:bg-white/50'
                   }`}
                 >
                   {link.label}

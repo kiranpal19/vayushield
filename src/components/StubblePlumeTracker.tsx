@@ -149,7 +149,7 @@ export const StubblePlumeTracker: React.FC = () => {
 
               <div className="text-center md:text-right">
                 <span className="text-[10px] font-mono uppercase text-slate-400">Receptor Airshed</span>
-                <p className="text-base font-bold text-rose-400">DTU Rohini & Delhi Urban Bowl</p>
+                <p className="text-base font-bold text-rose-400">Delhi-NCR Urban Airshed</p>
                 <p className="text-[11px] text-amber-400 font-mono font-semibold">ETA: {selectedHotspot.expectedDelhiImpactTime}</p>
               </div>
             </div>

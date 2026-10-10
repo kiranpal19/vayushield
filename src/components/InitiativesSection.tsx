@@ -70,8 +70,8 @@ export const InitiativesSection: React.FC = () => {
             <div className="bg-white rounded-3xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col space-y-3">
               <div className="h-40 rounded-2xl overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=400&auto=format&fit=crop&q=80"
-                  alt="Community Clean Commute"
+                  src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&auto=format&fit=crop&q=80"
+                  alt="Clean Transit Corridors"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/90 text-gray-900 backdrop-blur-sm">

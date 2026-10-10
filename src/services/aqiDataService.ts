@@ -38,8 +38,8 @@ export function getAqiBadgeClass(aqi: number): string {
 // 22 real CPCB & DPCC Monitoring Stations across Delhi-NCR
 export const INITIAL_DELHI_STATIONS: StationData[] = [
   {
-    id: 'dtu-bawana',
-    name: 'DTU Rohini / Bawana',
+    id: 'rohini-bawana',
+    name: 'Rohini / Bawana',
     zone: 'North',
     lat: 28.7501,
     lng: 77.1177,

@@ -13,7 +13,7 @@ export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('hero');
   const [selectedEpisode, setSelectedEpisode] = useState<string>('winter_severe');
   const [isAwsModalOpen, setIsAwsModalOpen] = useState<boolean>(false);
-  const [selectedStationId, setSelectedStationId] = useState<string>('dtu-bawana');
+  const [selectedStationId, setSelectedStationId] = useState<string>('rohini-bawana');
 
   // Compute stations modified by scenario episode
   const currentStations: StationData[] = useMemo(() => {

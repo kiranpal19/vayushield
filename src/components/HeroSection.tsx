@@ -26,7 +26,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onExploreSuite,
   onOpenAwsModal,
 }) => {
-  const [selectedPinStation, setSelectedPinStation] = useState<string>('dtu-bawana');
+  const [selectedPinStation, setSelectedPinStation] = useState<string>('rohini-bawana');
 
   return (
     <section className="relative pt-6 pb-16 overflow-hidden">
@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Tag Pill */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-semibold shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>TOGETHER FOR CLEANER AIR • HACKATHON BUILD</span>
+              <span>TOGETHER FOR CLEANER AIR • DELHI-NCR AIRSHED</span>
             </div>
 
             {/* Giant Title (matching 'Save Nature, Save Tomorrow') */}
@@ -65,7 +65,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     }}
                     className="w-full bg-transparent text-sm text-gray-800 font-medium focus:outline-none cursor-pointer"
                   >
-                    <option value="dtu-bawana">📍 DTU Rohini / Bawana (North Delhi)</option>
+                    <option value="rohini-bawana">📍 Rohini / Bawana (North Delhi)</option>
                     <option value="anand-vihar">📍 Anand Vihar ISBT (East Delhi)</option>
                     <option value="ito">📍 ITO Intersection (Central Delhi)</option>
                     <option value="dwarka-sec8">📍 Dwarka Sector 8 (West Delhi)</option>
@@ -115,19 +115,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* Right Column: Hero Visual with Overlapping Glass Cards (5 cols) */}
           <div className="lg:col-span-5 relative">
             {/* The Main Hero Visual Card */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200/80 bg-gray-900 h-[480px]">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200/80 bg-gray-900 h-[480px] isolate [transform:translateZ(0)]">
               <img
                 src="https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=800&auto=format&fit=crop&q=80"
                 alt="Clean Forest Sky vs Smog"
-                className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105"
+                className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105 [backface-visibility:hidden]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-gray-950/20" />
 
-              {/* Floating Pill Top Left: DTU Node */}
+              {/* Floating Pill Top Left */}
               <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/40 shadow-lg flex items-center space-x-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                <span className="text-xs font-bold text-gray-900">DTU Rohini Node</span>
-                <span className="text-[11px] text-gray-500 font-medium">Telemetry Online</span>
+                <span className="text-xs font-bold text-gray-900">Live Telemetry Node</span>
+                <span className="text-[11px] text-gray-500 font-medium">Online</span>
               </div>
 
               {/* Overlapping Feature Cards on the Right (exact match to Aeline reference cards) */}

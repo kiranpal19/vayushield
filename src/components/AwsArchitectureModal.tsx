@@ -23,9 +23,9 @@ export const AwsArchitectureModal: React.FC<AwsArchitectureModalProps> = ({ isOp
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h3 className="text-base font-bold text-white">AWS Integration & Hackathon Qualification</h3>
+                <h3 className="text-base font-bold text-white">AWS Open Source & Cloud Architecture</h3>
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold">
-                  Eligible for AWS Prizes
+                  Cedar Policy & Serverless
                 </span>
               </div>
               <p className="text-xs text-slate-400">
@@ -78,7 +78,7 @@ export const AwsArchitectureModal: React.FC<AwsArchitectureModalProps> = ({ isOp
                   </p>
                   <div className="flex items-center space-x-1.5 text-emerald-400 text-[11px] font-medium pt-1">
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Meets "Auth and policy: Cedar" Hackathon requirement</span>
+                    <span>AWS Open Source: Cedar Policy-as-Code Engine</span>
                   </div>
                 </div>
 
@@ -92,7 +92,7 @@ export const AwsArchitectureModal: React.FC<AwsArchitectureModalProps> = ({ isOp
                   </p>
                   <div className="flex items-center space-x-1.5 text-emerald-400 text-[11px] font-medium pt-1">
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Meets "Ship It: Lambda, DynamoDB, SNS, Amplify" requirement</span>
+                    <span>Production Architecture: Lambda, DynamoDB, SNS, Amplify</span>
                   </div>
                 </div>
               </div>
@@ -276,7 +276,7 @@ Resources:
 
         {/* Footer */}
         <div className="p-4 border-t border-slate-800 bg-slate-950 flex items-center justify-between">
-          <span className="text-[11px] text-slate-400">Team VayuKraft • Environmental Hacks @ DTU Delhi</span>
+          <span className="text-[11px] text-slate-400">VayuShield • AWS Cedar Policy Engine & Serverless Architecture</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold"

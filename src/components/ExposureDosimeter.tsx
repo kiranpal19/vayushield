@@ -21,7 +21,7 @@ interface ExposureDosimeterProps {
 }
 
 export const ExposureDosimeter: React.FC<ExposureDosimeterProps> = ({ stations }) => {
-  const [originId, setOriginId] = useState<string>('dtu-bawana');
+  const [originId, setOriginId] = useState<string>('rohini-bawana');
   const [destId, setDestId] = useState<string>('mandir-marg');
   const [durationMinutes, setDurationMinutes] = useState<number>(45);
   const [commuteMode, setCommuteMode] = useState<CommuteMode>('auto_rickshaw');
