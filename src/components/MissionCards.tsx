@@ -51,13 +51,14 @@ export const MissionCards: React.FC<MissionCardsProps> = ({ onSelectFeature, onO
           {/* Card 1: School Air Safety */}
           <div
             onClick={() => onSelectFeature('school')}
-            className="group relative rounded-3xl overflow-hidden shadow-lg border border-gray-200/80 h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-end p-7"
+            className="group relative rounded-3xl overflow-hidden shadow-lg border border-gray-200/80 h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-end p-7 bg-gradient-to-br from-[#064e3b] via-[#043327] to-[#0f172a]"
           >
             {/* Background image */}
             <img
               src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&auto=format&fit=crop&q=80"
               alt="School Campus"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-75 mix-blend-overlay"
             />
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent" />
@@ -83,13 +84,14 @@ export const MissionCards: React.FC<MissionCardsProps> = ({ onSelectFeature, onO
           {/* Card 2: Stubble Radar */}
           <div
             onClick={() => onSelectFeature('stubble')}
-            className="group relative rounded-3xl overflow-hidden shadow-lg border border-gray-200/80 h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-end p-7"
+            className="group relative rounded-3xl overflow-hidden shadow-lg border border-gray-200/80 h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-end p-7 bg-gradient-to-br from-[#7c2d12] via-[#431407] to-[#0f172a]"
           >
             {/* Background image */}
             <img
               src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&auto=format&fit=crop&q=80"
               alt="Stubble farm fires"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-75 mix-blend-overlay"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent" />
 
@@ -113,13 +115,14 @@ export const MissionCards: React.FC<MissionCardsProps> = ({ onSelectFeature, onO
           {/* Card 3: Commute Dosimeter & Indoor CADR */}
           <div
             onClick={() => onSelectFeature('commute')}
-            className="group relative rounded-3xl overflow-hidden shadow-lg border border-gray-200/80 h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-end p-7"
+            className="group relative rounded-3xl overflow-hidden shadow-lg border border-gray-200/80 h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-end p-7 bg-gradient-to-br from-[#0369a1] via-[#082f49] to-[#0f172a]"
           >
             {/* Background image */}
             <img
               src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=700&auto=format&fit=crop&q=80"
               alt="Delhi Metro & Urban Commute"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-75 mix-blend-overlay"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent" />
 

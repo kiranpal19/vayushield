@@ -20,11 +20,12 @@ export const InitiativesSection: React.FC = () => {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-5">
             {/* Card 1 */}
             <div className="bg-white rounded-3xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col space-y-3">
-              <div className="h-40 rounded-2xl overflow-hidden relative">
+              <div className="h-40 rounded-2xl overflow-hidden relative bg-gradient-to-br from-emerald-800 to-slate-900">
                 <img
                   src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80"
                   alt="School Children"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 opacity-90"
                 />
                 <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/90 text-gray-900 backdrop-blur-sm">
                   School Safety
@@ -44,11 +45,12 @@ export const InitiativesSection: React.FC = () => {
 
             {/* Card 2 */}
             <div className="bg-white rounded-3xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col space-y-3">
-              <div className="h-40 rounded-2xl overflow-hidden relative">
+              <div className="h-40 rounded-2xl overflow-hidden relative bg-gradient-to-br from-amber-800 to-slate-900">
                 <img
                   src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&auto=format&fit=crop&q=80"
                   alt="Clean Energy & Farming"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 opacity-90"
                 />
                 <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/90 text-gray-900 backdrop-blur-sm">
                   Crop Solutions
@@ -68,11 +70,12 @@ export const InitiativesSection: React.FC = () => {
 
             {/* Card 3 */}
             <div className="bg-white rounded-3xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col space-y-3">
-              <div className="h-40 rounded-2xl overflow-hidden relative">
+              <div className="h-40 rounded-2xl overflow-hidden relative bg-gradient-to-br from-cyan-800 to-slate-900">
                 <img
                   src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&auto=format&fit=crop&q=80"
                   alt="Clean Transit Corridors"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 opacity-90"
                 />
                 <span className="absolute bottom-2.5 left-2.5 text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/90 text-gray-900 backdrop-blur-sm">
                   Transit Health
