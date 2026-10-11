@@ -57,7 +57,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfcfb] text-gray-900 flex flex-col font-sans selection:bg-emerald-200 selection:text-emerald-900">
+    <div className="min-h-screen bg-[#fcfcfb] text-gray-900 flex flex-col font-sans selection:bg-emerald-200 selection:text-emerald-900 overflow-x-hidden w-full">
       {/* Top Navbar */}
       <Navbar
         activeTab={activeTab}
